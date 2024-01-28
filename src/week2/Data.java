@@ -49,6 +49,22 @@ public class Data
 		 * this keyword help us to understand difference between local variable and instance variable 
 		 */
 		
+		
+		AccessModifierTest1 a2=new AccessModifierTest1();
+		
+		System.out.println("I am same package in different class");
+		
+	System.out.println(a2.id);//default
+	System.out.println(a2.name);//public
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 }
