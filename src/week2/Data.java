@@ -56,6 +56,8 @@ public class Data
 		
 	System.out.println(a2.id);//default
 	System.out.println(a2.name);//public
+	System.out.println(a2.acno);//protected
+	
 		
 		
 		
