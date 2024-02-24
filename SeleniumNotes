@@ -107,7 +107,7 @@ driver.navigate().refresh()
 ================================================
 How to interact any webElement
 -------------------------------
-WebElement is any GUI control-textbox,button,link,drodown
+WebElement is any GUI control-textbox,button,link,dropdown
 
 Selenium provides one interface WebElement
 ----------------------------------------------
@@ -118,6 +118,8 @@ Selenium provides one interface WebElement
 ----------------------------------------
 Selenium identify WebElement using Locators
 -----------------------------------------------
+Locator is  address of that webelement from webpage
+
 Selenium support 8 locators
 =========================
 1.By id (primary)
@@ -140,7 +142,8 @@ tagname   attribute="value"
 
 ========================
 first get the address of webElement using By class
-then pass adress to webDriver methods
+
+then pass address to webDriver methods
 ======================================
 1.findElement()
 -------------
@@ -149,10 +152,14 @@ then pass adress to webDriver methods
 -if element not found it will throw exception NoSuchElementException
 
 2.findElements()
-----------------------
+---------------------
+-findElements() help to identify multiple webelements
+-It returns List<WebElement>
+-If any element not found this never throws exception
+it returns empty[]
 
 ==========================================
-WebElement validation commnds
+WebElement validation commands
 ========================
 1.isDisplayed()
 2.isEnabled()
@@ -163,6 +170,296 @@ WebElement actions
 textbox,searchbox--->send some data-->sendKeys()
 To clear the data from input box--->clear()
 link,button,checkbox,radion button--->click()
+
+============================================
+24-02-2024
+=============
+Locators
+==========
+1.By className
+---------------
+<input type="submit" value="Login" class="btn btn-primary">
+tagname										class1  class2
+
+org.openqa.selenium.InvalidSelectorException:
+ Compound class names not permitted
+ 
+ 
+ verify locator
+ ===============
+ using browser
+ 
+ Inside DOM ctrl+f =finder
+ 
+ For current Ninja solution we use CssSelector
+ tagname with class
+ ====================
+ Syntax:
+ -------------
+ tagname.classname
+ 
+ input.btn.btn-primary
+ 
+ WebElement Commands
+ =====================
+ 1.getAttribute(attribute name)
+ ---------------------
+ To get the attribute value use this cmd
+ 
+ 2.getText()
+ -----------------
+ To get the inner text of html/css
+ to get the text of any webelement 
+ 
+ =========================
+ Link Automation
+ ==================
+ <a id="SignIn" href="login.html">Sign In</a>
+ <a>	Visible text(LinkTExt)		</a>	
+ 
+ Two Locators to automate link
+ ----------------------------
+ 1.By linkText
+ ---------------
+ Full match
+ 
+ driver.findElement(By.linkText("Sign In")).click();
+ 
+ 2.By partialLinkText
+ ------------------------
+ partail text match
+  driver.findElement(By.partailLinkText("In")).click()
+ ===========================================================
+ By tagName
+ ===============
+ Number of inputs
+ Number of images
+ Number of links
+ 
+ ======================================
+ Synchronization in selenium
+ ===============================
+ What is Synchronization issue?
+ ------------------------------
+ time mapping issue between application and tool
+ 
+ Selenium support two dynamic wait
+ ===================================
+ 1.Implicit Wait
+ -----------------
+ Global wait applicable for entire script
+ 
+ driver.manage().timeouts().implecitlyWait(Duration.ofSecond(10))
+ 
+ 
+ 2.Explicit wait
+ -----------------------
+ It is applicable for single webElement
+ 
+ As per condition we can apply wait
+ 
+ 1.WebDriverWait class
+ 2.FluentWait class
+ 
+ WebDriverWait(c) extends FluentWait(c) implements Wait(I)
+ 
+ 
+ =====================================================
+ Dynamic Locators
+ ==================
+ 1.By cssSelector
+ 2.By xpath
+ 
+ What is Css
+ -------------
+ Cascaded style sheet is a programming language which helps to provide
+ styles to webelement
+ 
+ What is cssSelector
+ --------------------
+ cssSelector is a locator in selenium to identify element based on css
+ Ajax type element
+ 
+ CssSelector can travel only in forward directions
+ 
+ #user-name
+ 
+techniques
+=============
+1.tagname with id
+------------------
+syntax:
+-------------
+tagname#id
+
+<input type="text" id="user-name" name="user-name" placeholder="Username" >
+
+input#user-name
+
+
+2.tagname with attribute(any)
+------------------------
+syntax:
+============
+tagname[attribute name='value']
+
+<input type="password">
+
+input[type='password']
+
+3.tagname with class name
+----------------------------
+Syntax:
+=========
+tagname.classname
+
+<input type="submit" class="btn_action" id="login-button" value="LOGIN" wfd-id="id2">
+
+input.btn_action-------1 of 1
+
+4.tagname with id,class and attribute
+-----------------------------------------
+Syntax
+============
+tagname#id.classname[attribute='value']
+<input type="submit" class="btn_action" id="login-button" value="LOGIN" wfd-id="id2">
+
+input#login-button.btn_action[type='submit']----1 of 1
+
+or
+
+input.btn_action[type='submit']----1 of 1
+
+
+=============================================
+
+Functions/Methods in Css
+=================
+<input class="form_input"  id="user-name" name="user-name" placeholder="Username"  >
+1. ^starts With(prefix value) 
+---------------------
+Syntax:
+========
+tagname[attribute ^='prefix value']
+
+input[placeholder ^='User']
+
+====================================
+What is Xpath?
+==================
+
+
+Xpath Types
+=============
+
+
+
+Xpath with operators
+=====================
+
+
+xpath with index and position()
+==================================
+
+
+
+Methods for xpath
+===================
+text()
+normalize-space()
+contains()
+starts-with()
+
+
+Xpath Axies
+=============
+1.Ansector
+2.parent
+3.child
+4.following
+5.preceding
+6.following-sibling
+7.preceding-sibling
+
+=========================
+Xpath tool
+==============
+
+
+
+
+
+
+
+2. $ends With(suffix value)  
+
+---------------------
+Syntax:
+========
+tagname[attribute $='suffix value']
+
+input[placeholder $='name']
+
+
+
+3.*contains(substring/partail match) 
+---------------------
+Syntax:
+========
+tagname[attribute *='partail string']
+
+input[placeholder *='name']
+===============================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+==================
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 	
+ 
+ 
+ 
+ 
+ 
+
+
+
 
 
 

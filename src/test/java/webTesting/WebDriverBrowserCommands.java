@@ -13,7 +13,8 @@ public class WebDriverBrowserCommands {
 		WebDriver driver=new ChromeDriver();
 		
 		//open application
-		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		//driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		driver.get("https://automationplayground.com/crm/");
 		
 		//to maximize screen/browser window
 		driver.manage().window().maximize();
