@@ -345,52 +345,6 @@ tagname[attribute ^='prefix value']
 input[placeholder ^='User']
 
 ====================================
-What is Xpath?
-==================
-
-
-Xpath Types
-=============
-
-
-
-Xpath with operators
-=====================
-
-
-xpath with index and position()
-==================================
-
-
-
-Methods for xpath
-===================
-text()
-normalize-space()
-contains()
-starts-with()
-
-
-Xpath Axies
-=============
-1.Ansector
-2.parent
-3.child
-4.following
-5.preceding
-6.following-sibling
-7.preceding-sibling
-
-=========================
-Xpath tool
-==============
-
-
-
-
-
-
-
 2. $ends With(suffix value)  
 
 ---------------------
@@ -410,6 +364,200 @@ tagname[attribute *='partail string']
 
 input[placeholder *='name']
 ===============================================
+
+What is Xpath?
+==================
+xpath is path of webelement from html/xml page
+xpath identify element from DOM(document object model)
+========================
+html DOm
+===========
+<html>--------root 
+<head>
+<title>apptitle<title>
+</head>
+
+<body>
+<input type="text" value="username"/>
+<a href="">linktext</a>-------------------element
+<div>
+<ul>unorder list
+</body>
+
+</html>
+==================================
+Xpath Types
+=============
+1.Absolute xpath(Full xpath)
+-----------------------------
+- absolute xpath identify element from root node
+- starts with '/'
+
+/html/body/section/div/div/div/div/form/div[1]/input
+
+2.Relative xpath(partial Xpath)
+--------------------------------
+- Relative xpath identify element from the relative property
+- starts with '//'
+
+//*[@id="email-id"]
+
+* all
+
+Syntax:
+============
+//tagname[@attributename='value']
+
+===============================================
+Xpath with operators
+=====================
+1.and
+======
+Syntax:
+=========
+//tagname[@attribute1='value' and @attribute2='value']
+2.or
+=====
+Syntax:
+=========
+//tagname[@attribute1='value' or @attribute2='value']
+
+xpath with index and position()
+==================================
+
+Syntax:
+========
+(xpath)[index number]
+
+(xpath)[position()=index]
+
+===========================================
+Methods for xpath
+===================
+text()
+=========
+Syntax:
+=========
+//tagname[text()='visibile text']
+
+(//a[text()='Best Sellers'])[1]-----1 of 1
+--------------------------------------
+normalize-space()
+==================
+ignore white space before and after text and captures that visible text
+
+Syntax:
+=======
+//tagname[normalize-space()='text']
+
+contains()
+==============
+Syntax:
+============
+//tagname[contains(@attribute,'partial value')]
+
+or
+
+//tagname[contains(text(),'partial text')]
+
+starts-with(prefix)
+=================
+Syntax:
+============
+//tagname[starts-with(@attribute,'prefix value')]
+
+or
+
+//tagname[starts-with(text(),'prefix text')]
+=======================================================
+Xpath Axies
+=============
+<tbody>--------------Grand parent Ancestor for John
+<tr>------------------->parent for John
+         <td>4</td>-------------preceding sibling
+
+          <td>John</td>----------Element
+
+          <td>Robinson</td>---------following sibling
+
+          <td>jr5527</td>
+ 
+         <td>
+              <a href="user.html"><i class="icon-pencil"></i></a>
+              <a role="button" href="#myModal" data-toggle="modal"><i class="icon-remove"></i></a>
+          </td>
+
+        </tr>
+</tbody>    
+        
+
+1.Ancestor
+=============
+//tagname[@attribute='value']//ancestor::tagname of ancestor
+
+Identify Ancestor tagname for John
+==================================
+//td[text()='John']//ancestor::tbody----------1 of 1
+
+2.parent
+============
+//tagname[@attribute='value']//parent::tagname of parent
+
+Identify parent tagname for John
+==================================
+//td[text()='John']//parent::tr-------1 of 1
+
+3.child
+==========
+//tagname[@attribute='value']//child::tagname of child
+
+Identify all child nodes/tagname for row 3
+===============================================
+//tbody//tr[3]//child::td-----------5 childs
+
+4.following
+=============
+//tagname[@attribute='value']//following::tagname of following node
+
+Identify all following tag td for John
+=========================================
+//td[text()='John']//following::td----------13 nodes with td
+
+//td[text()='John']//following::tr--------------2 rows available
+
+5.preceding
+===========
+//tagname[@attribute='value']//preceding::tagname of preceding node
+
+Identify all preceding tag td for John
+======================================
+//td[text()='John']//preceding::td
+
+6.following-sibling
+======================
+//tagname[@attribute='value']//following-sibling::tagname of sibling
+
+Identify following-sibling for john
+=======================================
+//td[text()='John']//following-sibling::td---------3
+
+7.preceding-sibling
+=========================
+//tagname[@attribute='value']//preceding-sibling::tagname of sibling
+
+Identify preceding sibling for john
+=======================================
+//td[text()='John']//preceding-sibling::td----------1
+==============================================
+Xpath tool
+==============
+
+
+
+
+
+
+
 
 
 
