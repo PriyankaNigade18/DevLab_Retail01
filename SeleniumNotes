@@ -551,29 +551,94 @@ Identify preceding sibling for john
 ==============================================
 Xpath tool
 ==============
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+selectorsHub
 ==================
+3-03-2024
+===============
+Dropdown Automation
+--------------------
+1.Select tag based dropdown
+-----------------------------
+Select class
+-------------
+Select s1=new Select(locator of dropdown)
+
+single selection
+===============
+selectByIndex()
+selectByVisibleText()
+selectByValue()
+
+Is dropdown support multiple selection
+========================================
+isMultiple()
+
+To Test all options
+============================
+getOptions()
+
+=======================================
+2.Bootstrap drop down
+=====================
+xpath
+
+Capabilities
+================
+Capabilities are options that you can use to customize and configure a ChromeDriver session.
+
+browser specific classes
+======================
+Chorme===>ChromeOptons class
+Edge----->EdgeOptions class
+Firefox---->FirefoxOptions class
+
+To run test case in headless mode
+ChromeOptions options=new ChromeOptions();
+options.addArguments("--headless");
+		
+To disable notifications
+ChromeOptions options=new ChromeOptions();
+options.addArguments("--disable-notifications");
+
+===============================================================
+-------------------------------
+Alert Handling
+===============
+
+Automate any alert first switch the driver control from main page to alert window
+===================================================
+driver.switchTo().alert()
+
+Selenium provide Alert interface
+=====================================
+1.to get alert text
+-------------------------
+getText()
+
+2.To click on ok button
+---------------------------
+accept()
+
+3.To click on cancel button
+-------------------------------
+dismiss()
+
+4.for prompt type alert
+===========================
+sendKeys()
+
+
+FrameHandling
+==============
+
+MultipleWindow Handling
+
+
+
+
+
+
+
  
  
  
