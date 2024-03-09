@@ -19,6 +19,12 @@ public class WebDriverWaitDemo {
 		WebDriver driver=new ChromeDriver();
 		driver.get("https://tutorialsninja.com/demo/index.php?route=account/login");
 
+		boolean status=Utility.waitForUrlMatch(driver,"ninja");
+		System.out.println("Status of current url is: "+status);
+		
+		boolean title=Utility.waitForTitleMatch(driver,"Login");
+		System.out.println("Status of title is: "+title);
+		
 		//by locator
 		By email=By.id("input-email");
 		By pass=By.name("password");

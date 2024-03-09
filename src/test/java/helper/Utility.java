@@ -31,6 +31,18 @@ public class Utility {
 		WebDriverWait wait1=new WebDriverWait(driver,Duration.ofSeconds(10));
 		return wait1.until(ExpectedConditions.elementToBeClickable(loc));
 	}
+	
+	public static boolean waitForUrlMatch(WebDriver driver,String url)
+	{
+		WebDriverWait wait1=new WebDriverWait(driver,Duration.ofSeconds(10));
+		return wait1.until(ExpectedConditions.urlContains(url));
+	}
+	public static boolean waitForTitleMatch(WebDriver driver,String title)
+	{
+		WebDriverWait wait1=new WebDriverWait(driver,Duration.ofSeconds(10));
+		return wait1.until(ExpectedConditions.titleContains(title));
+	}
+	
 	//********************Dropdown****************************
 	public static void dynamicDropdown(WebDriver driver,By loc,String value)
 	{

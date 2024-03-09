@@ -555,7 +555,7 @@ selectorsHub
 ==================
 3-03-2024
 ===============
-Dropdown Automation
+Drop down Automation
 --------------------
 1.Select tag based dropdown
 -----------------------------
@@ -630,12 +630,61 @@ sendKeys()
 
 FrameHandling
 ==============
+One html document embedded into another html document
+
 
 MultipleWindow Handling
+==========================
+-To get parent window Id
+getWindowHandle()
+
+-To get all child window Id
+getWindowHandles()
+
+Selenium 4
+--------------
+newWindow()
+============
+Return type of newWindow() is WenDriver instance
+
+open any new tab/window
+==========================
+WebDriver tab=driver.switchTo().newWindow(WindowType.TAB);
+			tab.get("https://www.redbus.in");
+			
+WebDriver tab=driver.switchTo().newWindow(WindowType.WINDOW);
+tab.get("https://www.redbus.in");
+
+
+
+Actions class
+===================
+If you are doing one action use perform()
+If you are doing multiple actions then use build().perform()
 
 
 
 
+
+
+Right click and double click
+http://demo.guru99.com/test/simple_context_menu.html
+
+Mouse over
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onmouseover
+
+drag n drop
+http://jqueryui.com/droppable/#default
+
+Slider
+https://jqueryui.com/slider/
+
+Resizing
+https://jqueryui.com/resizable/
+
+Tooltip
+https://jqueryui.com/tooltip
+=========================================
 
 
 
