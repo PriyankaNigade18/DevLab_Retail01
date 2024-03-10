@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
+import helper.Utility;
+
 public class RightClickAction {
 
 	public static void main(String[] args) throws InterruptedException
@@ -41,7 +43,10 @@ public class RightClickAction {
 		//alert window
 		Alert alt=driver.switchTo().alert();
 		System.out.println("Alert Text: "+alt.getText());
+		
 		alt.accept();
+		
+		Utility.getScreenshot(driver);
 		
 		
 		

@@ -685,6 +685,63 @@ https://jqueryui.com/resizable/
 Tooltip
 https://jqueryui.com/tooltip
 =========================================
+TestNG
+===========
+To execute test cases in sequence 
+(priority=1)
+
+To execute any test case multiple number of time
+invocationCount=3
+
+To setup execution timeout for test case 
+timeout=3000
+
+To provide dependency between test case
+dependOnMethod="MethodNAme"
+
+There is dependency between test and i want to run my dependent test in any condition
+alwaysRun=true
+
+Ignore test case from execution
+===================================
+1.enabled=false
+2.using xml file by excluding method
+for test case create testng.xml file 
+<method>
+<exclude name="testcase/>
+</method>
+
+
+testng.xml File
+=================
+This is configuration file for a project
+
+usages
+========
+1.Grouping execution
+
+2.Method execution
+
+3.Test data setup using parameter
+
+4.parallel testing
+
+5.listners
+
+6.To create testsuite(collection of test cases)
+
+
+How to run only fail test from suite
+=========================================
+goto test-output folder
+and open/run testng-failed.xml file
+
+
+
+
+
+
+
 
 
 

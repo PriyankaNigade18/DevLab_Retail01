@@ -1,17 +1,64 @@
 package helper;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Utility {
 
+	
+	
+	public static String timestamp()
+	{
+		return new SimpleDateFormat("yyyyMMdd").format(new Date());
+	}
+
+	public static void getScreenshot(WebDriver driver)
+	{
+		TakesScreenshot ts=(TakesScreenshot) driver;
+		
+		File temp=ts.getScreenshotAs(OutputType.FILE);
+		File dest=new File(System.getProperty("user.dir")+"//screenshots//ProjectName"+timestamp()+System.currentTimeMillis()+".png");
+		
+		try {
+			FileHandler.copy(temp,dest);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	//**************JAvascriptExecutor*******************
+	
+	public static void scrollDown(WebDriver driver)
+	{	JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+	}
+	
+	public static void scrollUp(WebDriver driver)
+	{	JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+	}
+	public static void scrollUpToElement(WebDriver driver,WebElement ele)
+	{	JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);",ele);
+	}
+	
+	
 	//*****************Explicit Wait****************************
 	public static WebElement waitForPresenceOfElement(WebDriver driver,By loc)
 	{
