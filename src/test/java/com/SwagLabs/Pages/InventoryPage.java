@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.SwagLabs.Utility.Utility;
+
 public class InventoryPage 
 {
 	private WebDriver driver;
@@ -29,6 +31,7 @@ public class InventoryPage
 	
 	public void getProductName()
 	{
+		
 		System.out.println("*****Product details*****");
 		List<WebElement> list1=driver.findElements(productlist);
 		
@@ -36,7 +39,9 @@ public class InventoryPage
 		{
 			System.out.println(i.getText());
 		}
+		Utility.getScreenshot(driver);
 	}
+	
 	
 	public void addProductToCart(String pname)
 	{
@@ -47,10 +52,12 @@ public class InventoryPage
 			if(i.getText().contains(pname))
 			{
 				i.click();
+				
 				break;
 			}
 		}
 		
+		Utility.getScreenshot(driver);
 		driver.findElement(addcartbtn).click();
 		System.out.println("Selected Product added to the Cart: "+pname);
 		
