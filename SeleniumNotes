@@ -737,6 +737,18 @@ goto test-output folder
 and open/run testng-failed.xml file
 
 
+===============================================
+9552671595
+
+Data Driven Testing
+========================
+Execute same set of actions with multiple set of data multiple time is called.
+
+In TestNG Datadriven Framework
+==================================
+1.Using array
+2.Using Apache POI library(excel file---Read)
+
 
 
 
